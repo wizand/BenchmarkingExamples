@@ -15,8 +15,9 @@ namespace BenchmarkConsole
         [GlobalSetup]
         public void Setup()
         {
-            
-            string[] rows = File.ReadAllLinesAsync("100000.txt").GetAwaiter().GetResult();
+
+             string[] rows = File.ReadAllLinesAsync("100000.txt").GetAwaiter().GetResult();
+            //string[] rows = File.ReadAllLinesAsync("100.txt").GetAwaiter().GetResult();
             List<string> stringListWithDuplicates = new(rows.Length * 2);
             stringListWithDuplicates.AddRange(rows);
             stringListWithDuplicates.AddRange(rows);
@@ -49,6 +50,15 @@ namespace BenchmarkConsole
             originalArrayForResize[originalArrayForResize.Length-1] = "NewString";
 
             return originalArrayForResize;
+        }
+
+        [Benchmark]
+        public string[] AddNewStringWithLinqAppend()
+        {
+
+            string[] appendedArray = originalArray.Append("NewString").ToArray();
+
+            return appendedArray;
         }
     }
 }
