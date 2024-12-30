@@ -15,7 +15,13 @@ public class Program
         //BenchmarkRunner.Run<StringBenchmark>();
         //BenchmarkRunner.Run<AbsBenchmark>();
         //BenchmarkRunner.Run<DictVersusArrayLookup>();
-        BenchmarkRunner.Run<HashSetToArray>();
+        //BenchmarkRunner.Run<HashSetToArray>();
+        BenchmarkRunner.Run<ArrayResizeVsRecreate>();
+
+
+        //ArrayResizeVsRecreate arrayResizeVsRecreate = new ArrayResizeVsRecreate();
+        //arrayResizeVsRecreate.Setup();
+        //arrayResizeVsRecreate.AddNewStringWithArrayResize();
 
         //HashSetToArray hashSetToArray = new HashSetToArray();
         //hashSetToArray.Setup();
